@@ -1,9 +1,22 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import { useEffect } from 'react';
+
+import styles from '../styles/Home.module.css';
+import { loadLocaleData } from '../util/loadLocaleData';
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    async function doLoad() {
+      const targetLocale = 'en-GB';
+  
+      await loadLocaleData(targetLocale);
+    }
+    doLoad();
+    
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
