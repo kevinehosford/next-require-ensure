@@ -6,6 +6,8 @@ module.exports = function(locale, cb) {
         numbro.registerLanguage(require('numbro/dist/languages/en-GB.min'));
         numbro.setLanguage(locale);
 
+        console.log('locale set');
+
         cb();
     }, 'locale-en');
 };
